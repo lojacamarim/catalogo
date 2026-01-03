@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizador de Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Atualizador de Catálogo</h1>
+        <p class="description">
+            Faça upload do arquivo <strong>"Produtos do Sistema.json"</strong> para atualizar automaticamente 
+            o arquivo <strong>"Produtos do Catálogo.js"</strong> com preços e estoques atualizados.
+        </p>
+        
+        <div class="upload-area" id="dropArea">
+            <div class="upload-icon">📁</div>
+            <h3>Arraste e solte ou clique para selecionar</h3>
+            <p>Apenas arquivos JSON são aceitos</p>
+            <input type="file" id="fileInput" accept=".json">
+            <label for="fileInput" class="file-button">Selecionar Arquivo</label>
+        </div>
+        
+        <div class="info-box">
+            <h3>📋 O que será atualizado:</h3>
+            <ul>
+                <li><strong>Preço de venda (sellingPrice)</strong> → Do sistema para o catálogo</li>
+                <li><strong>Estoque (stock)</strong> → Do sistema para o catálogo</li>
+                <li><strong>Descontos (discount)</strong> → Mantidos do catálogo atual</li>
+                <li><strong>Imagens (images)</strong> → Mantidas do catálogo atual</li>
+            </ul>
+        </div>
+        
+        <div class="output-section" id="outputSection" style="display: none;">
+            <h3>📊 Resumo da Atualização</h3>
+            <div id="updateSummary"></div>
+            <button id="downloadBtn" class="download-button">⬇️ Baixar Catálogo Atualizado</button>
+            <div id="fileInfo"></div>
+        </div>
+        
+        <div class="status" id="status"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
